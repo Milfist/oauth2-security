@@ -1,55 +1,3 @@
-endpoints:
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-
-management:
-  security:
-    enabled: false
-
-security:
-  ignored: /**
-  require-ssl: true
-  oauth2:
-    client:
-      authorized-grant-types: client_credentials
-      access-token-validity-seconds: 1000
-      refresh-token-validity-seconds: 1000
-
-server:
-  port: 8443
-  ssl:
-    enabled: true
-    key-store: classpath:cer/corp.sch.ch.jks
-    key-store-password: Geneva.890
-    key-password: Geneva.890
-    key-alias: corp.sch.ch
-    key-store-type: JKS
-    key-store-provider: SUN
-  tomcat:
-    remote_ip_header: x-forwarded-for
-    protocol_header: x-forwarded-proto
-logging:
-  level:
-    root: ERROR
-    org:
-      springframework:
-        web: ERROR
-      hibernate: ERROR
-   
-  file: logs/log.log
-log4j:
-  logger:
-    org:
-      thymeleaf: INFO
-
-eureka:
-  client:
-    enabled: false
-    registerWithEureka: false
-    fetchRegistry: false
-
 spring:
   datasource:
     jdbc-url: jdbc:h2:mem:oauth2;DB_CLOSE_DELAY=-1
@@ -57,12 +5,8 @@ spring:
     password: sa
     driver-class-name: org.h2.Driver
     data: classpath:schemaH2.sql, classpath:dataH2.sql
-  jpa:
-    hibernate:
-      ddl-auto: none
-    properties:
-      hibernate:
-        show_sql: true
-        use_sql_comments: true
-        format_sql: true
-        type: trace
+    hikari:
+      jdbc-url:
+
+server:
+  port: 8443
