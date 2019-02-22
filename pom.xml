@@ -19,6 +19,23 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
+	<developers>
+		<developer>
+			<id>MilfisT</id>
+			<name>Miguel Anguita</name>
+			<email>milfist@gmail.com</email>
+		</developer>
+	</developers>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/Milfist/oauth2-security/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>Travis-CI</system>
+		<url>https://travis-ci.org/Milfist/oauth2-security</url>
+	</ciManagement>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -28,17 +45,6 @@
 	</properties>
 
 	<dependencies>
-
-	<!-- CONFIG SERVER -->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud</groupId>-->
-			<!--<artifactId>spring-cloud-starter-config</artifactId>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud</groupId>-->
-			<!--<artifactId>spring-cloud-config-client</artifactId>-->
-		<!--</dependency>-->
-	<!-- CONFIG SERVER -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
